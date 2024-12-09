@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        
+    </head>
+    <body >
+        <div id="root"></div>
+        
+        <script type="text/babel">
+            function Ab(){
+                var [a,setA]=React.useState("welcome to edupoly");
+                function inc(){
+                    setA(a+1)
+                }
+
+                return <div>
+                    <h1>{a}</h1>
+                  
+                    </div>
+
+            }
+    
+     
+
+            ReactDOM.render(<Ab></Ab>,document.getElementById("root"))
+
+        </script>
+    </body>
+</html>
