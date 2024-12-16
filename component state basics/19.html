@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <script type="text/babel">
+
+            function Mah(){
+                var [a,setA]=React.useState(+prompt())
+                return (
+                    <div>{
+                        <img src={(a%2==0)?"https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20230220120914_Pulsar.jpg&w=700&c=1":"https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2018/11/capture-1542216443.jpg"} />
+                    }
+                      </div>
+                )
+            }
+            ReactDOM.render(<Mah></Mah>,document.body)
+
+        </script>
+    </body>
+</html>
