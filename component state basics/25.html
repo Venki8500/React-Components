@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    </head>
+    <body>
+        <script type="text/babel">
+            function Sil(){
+                var [a,setA]=React.useState([10,20,30,40,50])
+                var [b,setB]=React.useState([1,2,3,4,5])
+              
+            
+                return(
+                    <div>{
+                        a.concat(b).sort(function(d,f){
+                        return (d>f?1:-1)
+                        }).map(function(x){
+                            return <h2>{x}</h2>
+                        })
+                    }</div>
+                )
+            }
+            ReactDOM.render(<Sil></Sil>,document.body)
+
+        </script>
+    </body>
+</html>
