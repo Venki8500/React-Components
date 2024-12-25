@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    </head>
+    <body>
+        <script type="text/babel">
+            function Sil(){
+                
+                var [b,setB]=React.useState(['dog', 'cat', 'pig', 'mouse', 'tiger', 'lion'])
+             
+            
+                return (
+                <div>
+                    {
+                      b.map(function(c){
+                        return <li>{c}</li>
+                      })
+                    }
+                </div>
+            )
+        }
+            ReactDOM.render(<Sil></Sil>,document.body)
+
+        </script>
+    </body>
+</html>
