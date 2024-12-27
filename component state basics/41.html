@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <script type="text/babel">
+            function Nit(){
+                var [ar, setAr] = React.useState([7, 41, 25, 8, 9, 6, 3]);
+
+                return (
+                    ar.map(function(o){
+                        return (o<25?<li>{o}</li>:null)
+                    })
+                )
+            }
+            ReactDOM.render(<Nit></Nit>,document.body)
+        </script>
+    </body>
+</html>
