@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <script type="text/babel">
+            function Nani(){
+            
+                var [x, setX] = React.useState(['dog', 'cat', 'pig', 'mouse', 'tiger', 'lion']);
+          
+            return (
+                x.map(function(c){
+                    return <li>{c}</li>
+                        
+                })
+            )
+            }
+          
+            ReactDOM.render(<Nani></Nani>,document.body)
+
+
+        </script>
+    </body>
+</html>
