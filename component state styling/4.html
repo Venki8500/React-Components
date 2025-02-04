@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <script type="text/babel">
+            function Jam(){
+                var [x,setX]=React.useState(["praveen","jaamkai","mirapakai","nikhil"])
+                return(
+                    <div style={{display:"flex"}}>
+                        {
+                            x.map(function(c){
+                                return <div style={{border:"1px solid",marginRight:"30px",padding:"20px"}}>{c}</div>
+                            })
+                        }
+                        </div>
+                )
+            }
+            ReactDOM.render(<Jam></Jam>,document.body)
+
+        </script>
+    </body>
+</html>
