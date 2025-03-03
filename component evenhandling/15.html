@@ -1,0 +1,35 @@
+</html>
+
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Ktm() {
+
+            var [a, setA] = React.useState('')
+
+            
+            function ab(event) {
+                setA(event.target.value)
+            }
+
+            return (
+                <div>
+                    <input type="text"  onKeyUp={() => { ab(event) }} />
+                 
+                    <h1 >{a}</h1>
+                </div>
+            )
+
+        }
+        ReactDOM.render(<Ktm></Ktm>, document.getElementById("root"))
+
+    </script>
+</body>
+
+</html>
