@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function X(){
+                var [a,setA]=React.useState([])
+
+                function f(ev){
+                    setA(ev.target.value)
+                    
+                }
+                function b(ev){
+                    setA(ev.target.value)
+                }
+                function c(ev){
+                    setA(ev.target.value)
+                }
+                function d(ev){
+                    setA(ev.target.value)
+                }
+                function e(ev){
+                    setA(ev.target.value)
+                }
+
+                return (
+                    <div>
+                        <input type="checkbox" value="reactjs" onChange={()=>{f(event)}}/>reactjs
+                        <input type="checkbox" value="nodejs" onChange={()=>{b(event)}}/>nodejs
+                        <input type="checkbox" value="angular" onChange={()=>{c(event)}}/>angular
+                        <input type="checkbox" value="mongodb" onChange={()=>{d(event)}}/>mongodb
+                        <input type="checkbox" value="expressjs" onChange={()=>{e(event)}}/>expressjs
+
+                        <h1>{a}</h1>
+                        </div>
+                )
+            }
+
+            ReactDOM.render(<X></X>,document.getElementById("root"))
+
+        </script>
+    </body>
+</html>
