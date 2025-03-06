@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+
+            function F(){
+                var[r,setR]=React.useState('')
+
+                function a(ev){
+                    setR(ev.target.value)
+                }
+
+                return (
+                    <div>
+                    <button value={10} onClick={()=>{a(event)}}>button1</button>
+                    <button value={20} onClick={()=>{a(event)}}>button2</button>
+                    <button value={30} onClick={()=>{a(event)}}>button3</button>
+                    <button value={40} onClick={()=>{a(event)}}>button4</button>
+                    <h1>{r}</h1>
+                    </div>
+                )
+            }
+
+            ReactDOM.render(<F></F>,document.getElementById("root"))
+
+        </script>
+    </body>
+</html>
