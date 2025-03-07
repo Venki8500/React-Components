@@ -1,0 +1,37 @@
+<html></html>
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function F() {
+            var [x, setX] = React.useState([])
+            function a() {
+                var h = document.getElementById("d1").value;
+                setX([...x,h]);
+                console.log(x)
+            }
+
+            return (
+                <div>
+                    <input type="text" id="d1" />
+                    <button onClick={() => { a() }}>click here to push</button>
+                    {
+                        x.map(function(c){
+                            return <li>{c}</li>
+                        })
+                    }
+                </div>
+            )
+        }
+
+        ReactDOM.render(<F></F>, document.getElementById("root"))
+
+    </script>
+</body>
+
+</html>
