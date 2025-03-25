@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    
+</head>
+
+<body>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>    <div id="root"></div>
+    <script type="text/babel">
+        function T() {
+            var [f, setF] = React.useState(0)
+            var [g, setG] = React.useState(0)
+
+            function a() {
+                setF(f+1)
+            }
+            function b() {
+                setG(g+1)
+            }
+
+            return (
+                <div>
+                    <h1>like:{f}</h1>
+                    <h1>dislike:{g}</h1>
+                    <button onClick={() => { a() }}>like</button>
+                    <button onClick={() => { b() }}>dislike</button>
+                </div>
+            )
+
+
+        }
+
+        ReactDOM.render(<T></T>, document.getElementById("root"))
+
+    </script>
+</body>
+
+</html>
