@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Jac() {
+            var [p, setP] = React.useState([{
+                firstname: "Praveen",
+                lastname: "Gubbala",
+                age: 40,
+                gender: 'male'
+            },
+            {
+                firstname: "Smrithi",
+                lastname: "mandana",
+                age: 25,
+                gender: 'female'
+            },
+            {
+                firstname: "mithali",
+                lastname: "raj",
+                age: 39,
+                gender: 'female'
+            },
+            {
+                firstname: "Rohit",
+                lastname: "Sharma",
+                age: 35,
+                gender: 'male'
+            },
+            {
+                firstname: "Sachin",
+                lastname: "Tendulkar",
+                age: 50,
+                gender: 'male'
+            }])
+
+            function a(b, m) {
+                document.getElementById("d").innerHTML = b + " " + "is at the index of" + " " + m
+            }
+
+            return (
+                <div>
+                    {
+                        p.map((x, i) => {
+                            return <li>{x.firstname} <button onClick={() => { a(x.lastname, i) }}>see</button></li>
+                        })
+                    }
+                    <h1 id="d"></h1>
+
+                </div>
+            )
+
+        }
+
+        ReactDOM.render(<Jac></Jac>, document.getElementById("root"))
+    </script>
+</body>
+
+</html>
