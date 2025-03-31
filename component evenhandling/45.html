@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function F() {
+            var [x, setX] = React.useState('')
+            var [y, setY] = React.useState('')
+            var [z, setZ] = React.useState('')
+
+            function s() {
+                var m = document.getElementById("d1").value;
+                setX(m)
+            }
+            function e() {
+                var n = document.getElementById("d2").value;
+                setY(n)
+            }
+
+            function sub() {
+                setZ(x - y)
+            }
+
+            return (
+                <div>
+                    <input type="text" id="d1" onChange={() => { s() }} /><br />
+                    <input type="text" id="d2" onChange={() => { e() }} /><br />
+                    <button onClick={() => { sub() }}>substraction</button>
+                    <h1>{z}</h1>
+                </div>
+            )
+        }
+
+        ReactDOM.render(<F></F>, document.getElementById("root"))
+
+    </script>
+</body>
+
+</html>
