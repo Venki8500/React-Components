@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <style>
+            #d2{
+                list-style: none;
+                font-size: 3rem;
+                border-bottom: 1px solid rgb(240, 229, 229);
+                background-color: rgb(243, 240, 240);
+            }
+            .bi{
+                font-size: 2rem;
+                border: none;
+            }
+         
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function T(){
+
+                var [x,setX]=React.useState([])
+
+                function f(){
+                    var s=document.getElementById("d1").value;
+                    setX([...x,{
+                        title:s,status:false
+                    }])                 
+                    // console.log(x)                   
+                }
+
+                function m(i){
+                    var ind=[...x];
+                   ind[i].status=!ind[i].status
+                   setX([...ind])
+                }
+
+                function del(i){
+                    // alert(i)
+                    var mani=[...x]
+                    mani.splice(i,1)
+                    setX([...mani])
+                    // console.log(mani)
+                }
+
+                return(
+                    <center>
+                    <div style={{border:"0px solid",width:"100%"}}>
+                        <input type="text" id="d1" />
+                        <button onClick={()=>{f()}}>Add Todo</button>
+                        {
+                            x.map(function(n,i){
+                                return <li id="d2" style={(n.status)?{textDecoration:"line-through"}:{}}>{n.title}<button onClick={()=>{m(i)}} >{n.status==false?<i class="bi bi-send" style={{width:"90px",height:"90px",backgroundColor:"green",color:"white",borderRadius:"3px"}}></i>:<i class="bi bi-reply" style={{width:"90px",height:"90px",backgroundColor:"blue",color:"white",borderRadius:"3px"}}></i>}</button><button onClick={()=>{del(i)}} style={{border:"none",backgroundColor:"transparent"}}><i class="bi bi-trash3-fill" style={{border:"0px solid",width:"90px",height:"90px",backgroundColor:"red",color:"white",borderRadius:"3px"}}></i></button></li>
+                            })
+                        }
+                        </div>
+                        </center>
+                )
+            }
+
+            ReactDOM.render(<T></T>,document.getElementById("root"))
+
+
+        </script>
+    </body>
+</html>
